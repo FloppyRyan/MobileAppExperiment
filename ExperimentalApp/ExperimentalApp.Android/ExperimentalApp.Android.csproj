@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C729739E-3402-459C-A438-7D4BF066D558}</ProjectGuid>
+    <ProjectGuid>{8DEB4536-0C10-4749-ACDD-EF835073943B}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>App1.Droid</RootNamespace>
-    <AssemblyName>App1.Android</AssemblyName>
+    <RootNamespace>ExperimentalApp.Droid</RootNamespace>
+    <AssemblyName>ExperimentalApp.Android</AssemblyName>
     <Deterministic>True</Deterministic>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -89,8 +89,8 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App1\ExperimentalApp.csproj">
-      <Project>{9AC734CF-FA20-4B4C-A932-6D382EE44815}</Project>
+    <ProjectReference Include="..\ExperimentalApp\ExperimentalApp.csproj">
+      <Project>{12115DCD-35DB-4C28-88A4-DE7DA9D901B7}</Project>
       <Name>ExperimentalApp</Name>
     </ProjectReference>
   </ItemGroup>
