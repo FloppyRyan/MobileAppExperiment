@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.MainPage">
+             x:Class="ExperimentalApp.MainPage">
 
-    <!--<StackLayout>
+    <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
@@ -18,16 +18,7 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-            <Button Text="Click Me" Clicked="Handle_Clicked" />
         </Label>
-    </StackLayout>-->
-    <StackLayout>
-        <Label Text="Welcome to Xamarin.Forms!"
-        HorizontalOptions="Center"
-        VerticalOptions="CenterAndExpand" />
-
-        <Button Text="Click Me" Clicked="Handle_Clicked" />
     </StackLayout>
-
 
 </ContentPage>
