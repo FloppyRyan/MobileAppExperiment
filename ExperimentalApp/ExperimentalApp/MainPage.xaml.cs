@@ -22,5 +22,7 @@ namespace ExperimentalApp
             count++;
             ((Button)sender).Text = $"You clicked {count} times.";
         }
+
+        async void GoToPage2(object sender, EventArgs e) => await Navigation.PushAsync(new Page2());
     }
 }
