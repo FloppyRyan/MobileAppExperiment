@@ -24,5 +24,7 @@ namespace ExperimentalApp
         }
 
         async void GoToPage2(object sender, EventArgs e) => await Navigation.PushAsync(new Page2());
+
+        async void StartGuessingGame(object sender, EventArgs e) => await Navigation.PushAsync(new GuessingGamePage());
     }
 }
