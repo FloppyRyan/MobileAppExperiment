@@ -26,10 +26,10 @@
             <Button Grid.Column="1" Grid.Row="2" Text="Return" Clicked="ReturnToMain" />
         </Grid>-->
         <RelativeLayout>
-            <!--<StackLayout Padding="3" BackgroundColor="Aqua">
+            <StackLayout Padding="3" BackgroundColor="Aqua">
                 <ContentView BackgroundColor="Blue">
                     <ContentView.Content>
-                        <Grid Margin="20,35,20,20" BackgroundColor="Azure">
+                        <Grid Margin="2,2,2,2" BackgroundColor="LightGray">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.5*" />
                                 <ColumnDefinition Width="0.5*" />
@@ -37,24 +37,37 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="50" />
-                                <RowDefinition Height="60" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="260" />
+                                <RowDefinition Height="45" />
                             </Grid.RowDefinitions>
-                            <Label Text="Column 0, Row 0" />
+                            <!--<Label Text="Column 0, Row 0" />
                             <Label Grid.Column="1" Text="Column 1, Row 0" />
                             <Label Grid.Row="1" Text="Column 0, Row 1" />
                             <Label Grid.Column="1" Grid.Row="1" Text="Column 1, Row 1" />
-                            <Label Grid.Column="0" Grid.Row="2" Text="asdfasdf" />
-                            <Button Grid.Column="1" Grid.Row="2" Text="Return" Clicked="ReturnToMain" />
+                            <Label Grid.Column="0" Grid.Row="2" Text="asdfasdf" />-->
+                            <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Guessing Game" HorizontalOptions="CenterAndExpand"/>
+                            <Label Grid.Column="0" Grid.Row="1" x:Name="HighestNumberLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="1" x:Name="HighestNumberEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start"/>
+                            <Label Grid.Column="0" Grid.Row="2" x:Name="LowestNumberLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="2" x:Name="LowestNumberEntry" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="0" Grid.Row="3" x:Name="RemainingTriesLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="3" x:Name="RemainingTriesEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="0" Grid.Row="4" x:Name="EnterNumberLabel" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                            <Entry Grid.Column="1" Grid.Row="4" Keyboard="Numeric" />
+                            <Button Grid.Column="0" Grid.Row="6" Text="Return" Clicked="Guess" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand"/>
                         </Grid>
                     </ContentView.Content>
                 </ContentView>
-            </StackLayout>-->
-            <StackLayout>
+            </StackLayout>
+            <!--<StackLayout>
                 <ContentView BackgroundColor="CornflowerBlue">
                     <ContentView.Content>
                         <TableView>
                             <TableRoot>
-                                <!--<TableSection>
+                                --><!--<TableSection>
                                     <ViewCell>
                                         <ViewCell.View>
                                             <Grid Margin="20,35,20,20" BackgroundColor="Azure">
@@ -76,7 +89,7 @@
                                             </Grid>
                                         </ViewCell.View>
                                     </ViewCell>
-                                </TableSection>-->
+                                </TableSection>--><!--
                                 <TableSection Title="Guessing Game">
                                     <TextCell Text="Highest Number" TextColor="Yellow" BindingContext="highest" />
                                     <TextCell Text="Lowest Number" TextColor="Yellow" BindingContext="lowest" />
@@ -94,7 +107,7 @@
                         </TableView>
                     </ContentView.Content>
                 </ContentView>
-            </StackLayout>
+            </StackLayout>-->
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
