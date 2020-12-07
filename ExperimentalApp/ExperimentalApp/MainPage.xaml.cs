@@ -17,14 +17,12 @@ namespace ExperimentalApp
             InitializeComponent();
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        //async void StartGuessingGame(object sender, EventArgs e) => await Navigation.PushAsync(new GuessingGamePage());
+
+        void StartGuessingGame(object sender, EventArgs e)
         {
-            count++;
-            ((Button)sender).Text = $"You clicked {count} times.";
+            Navigation.PopAsync();
+            Navigation.PushAsync(new GuessingGamePage());
         }
-
-        async void GoToPage2(object sender, EventArgs e) => await Navigation.PushAsync(new Page2());
-
-        async void StartGuessingGame(object sender, EventArgs e) => await Navigation.PushAsync(new GuessingGamePage());
     }
 }

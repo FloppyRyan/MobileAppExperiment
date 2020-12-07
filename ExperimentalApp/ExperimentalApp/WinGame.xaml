@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExperimentalApp.WinGame">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Text="You Won!!" FontSize="Title" TextColor="Blue" FontAttributes="Bold" 
+                HorizontalOptions="CenterAndExpand" 
+                   VerticalTextAlignment="End"/>
+            <Label Grid.Row="2" x:Name="numOfTries" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center" />
+            <Button Grid.Row="4" Text="Return" Clicked="ReturnToMain" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
