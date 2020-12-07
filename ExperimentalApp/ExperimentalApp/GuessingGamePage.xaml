@@ -3,28 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExperimentalApp.GuessingGamePage">
     <ContentPage.Content>
-        <!--<StackLayout>-->
-        <!--<Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />-->
-        <!--</StackLayout>-->
-        <!--<Grid Margin="20,35,20,20" BackgroundColor="Azure">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="0.5*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="60" />
-            </Grid.RowDefinitions>
-            <Label Text="Column 0, Row 0" />
-            <Label Grid.Column="1" Text="Column 1, Row 0" />
-            <Label Grid.Row="1" Text="Column 0, Row 1" />
-            <Label Grid.Column="1" Grid.Row="1" Text="Column 1, Row 1" />
-            <Label Grid.Column="0" Grid.Row="2" Text="asdfasdf" />
-            <Button Grid.Column="1" Grid.Row="2" Text="Return" Clicked="ReturnToMain" />
-        </Grid>-->
         <RelativeLayout>
             <StackLayout Padding="3" BackgroundColor="Aqua">
                 <ContentView BackgroundColor="Blue">
@@ -35,79 +13,30 @@
                                 <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="50" />
-                                <RowDefinition Height="260" />
+                                <RowDefinition Height="235" />
                                 <RowDefinition Height="45" />
                             </Grid.RowDefinitions>
-                            <!--<Label Text="Column 0, Row 0" />
-                            <Label Grid.Column="1" Text="Column 1, Row 0" />
-                            <Label Grid.Row="1" Text="Column 0, Row 1" />
-                            <Label Grid.Column="1" Grid.Row="1" Text="Column 1, Row 1" />
-                            <Label Grid.Column="0" Grid.Row="2" Text="asdfasdf" />-->
-                            <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Guessing Game" HorizontalOptions="CenterAndExpand"/>
-                            <Label Grid.Column="0" Grid.Row="1" x:Name="HighestNumberLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="1" x:Name="HighestNumberEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start"/>
-                            <Label Grid.Column="0" Grid.Row="2" x:Name="LowestNumberLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="2" x:Name="LowestNumberEntry" HorizontalTextAlignment="Start" />
-                            <Label Grid.Column="0" Grid.Row="3" x:Name="RemainingTriesLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="3" x:Name="RemainingTriesEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start" />
-                            <Label Grid.Column="0" Grid.Row="4" x:Name="EnterNumberLabel" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                            <Entry Grid.Column="1" Grid.Row="4" Keyboard="Numeric" />
-                            <Button Grid.Column="0" Grid.Row="6" Text="Return" Clicked="Guess" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand"/>
+                            <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Feedback" HorizontalOptions="CenterAndExpand" />
+                            <Label Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Guessing Game" HorizontalOptions="CenterAndExpand"/>
+                            <Label Grid.Column="0" Grid.Row="2" x:Name="HighestNumberLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="2" x:Name="HighestNumberEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start"/>
+                            <Label Grid.Column="0" Grid.Row="3" x:Name="LowestNumberLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="3" x:Name="LowestNumberEntry" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="0" Grid.Row="4" x:Name="RemainingTriesLabel" HorizontalTextAlignment="End" />
+                            <Label Grid.Column="1" Grid.Row="4" x:Name="RemainingTriesEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="0" Grid.Row="5" x:Name="EnterNumberLabel" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                            <Entry Grid.Column="1" Grid.Row="5" Keyboard="Numeric" x:Name="GuessEntry"/>
+                            <Button Grid.Column="0" Grid.Row="7" Text="Guess" Clicked="Guess" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand"/>
                         </Grid>
                     </ContentView.Content>
                 </ContentView>
             </StackLayout>
-            <!--<StackLayout>
-                <ContentView BackgroundColor="CornflowerBlue">
-                    <ContentView.Content>
-                        <TableView>
-                            <TableRoot>
-                                --><!--<TableSection>
-                                    <ViewCell>
-                                        <ViewCell.View>
-                                            <Grid Margin="20,35,20,20" BackgroundColor="Azure">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="0.5*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="50" />
-                                                    <RowDefinition Height="50" />
-                                                    <RowDefinition Height="60" />
-                                                </Grid.RowDefinitions>
-                                                <Label Text="Column 0, Row 0" />
-                                                <Label Grid.Column="1" Text="Column 1, Row 0" />
-                                                <Label Grid.Row="1" Text="Column 0, Row 1" />
-                                                <Label Grid.Column="1" Grid.Row="1" Text="Column 1, Row 1" />
-                                                <Label Grid.Column="0" Grid.Row="2" Text="asdfasdf" />
-                                                <Button Grid.Column="1" Grid.Row="2" Text="Return" Clicked="ReturnToMain" />
-                                            </Grid>
-                                        </ViewCell.View>
-                                    </ViewCell>
-                                </TableSection>--><!--
-                                <TableSection Title="Guessing Game">
-                                    <TextCell Text="Highest Number" TextColor="Yellow" BindingContext="highest" />
-                                    <TextCell Text="Lowest Number" TextColor="Yellow" BindingContext="lowest" />
-                                    <TextCell Text="Remaining Guesses" TextColor="AntiqueWhite" />
-                                    <EntryCell Label="What is your guess?" Text="" Keyboard="Numeric"/>
-                                </TableSection>
-                                <TableSection>
-                                    <ViewCell>
-                                        <StackLayout VerticalOptions="EndAndExpand">
-                                            <Button Text="Submit button" />
-                                        </StackLayout>
-                                    </ViewCell>
-                                </TableSection>
-                            </TableRoot>
-                        </TableView>
-                    </ContentView.Content>
-                </ContentView>
-            </StackLayout>-->
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

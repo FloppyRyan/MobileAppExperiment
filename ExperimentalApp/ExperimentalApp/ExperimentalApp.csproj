@@ -19,7 +19,7 @@
     <EmbeddedResource Update="GuessingGamePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Page2.xaml">
+    <EmbeddedResource Update="WinGame.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

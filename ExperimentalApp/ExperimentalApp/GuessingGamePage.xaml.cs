@@ -19,6 +19,8 @@ namespace ExperimentalApp
         private const string lowestlabel = "Lowest Number";
         private const string trieslabel = "Number of Tries Remaining";
         private const string enternumberlabel = "Enter a Number";
+        private int guess;
+        private int actualNum;
 
         public GuessingGamePage()
         {
@@ -32,28 +34,33 @@ namespace ExperimentalApp
             RemainingTriesLabel.Text = trieslabel;
             RemainingTriesEntry.Text = numberOfTries.ToString();
             EnterNumberLabel.Text = enternumberlabel;
+            actualNum = new Random(DateTime.Now.Second).Next(lowestNumber, highestNumber);
         }
-
-        async void ReturnToMain(object sender, EventArgs e)
-        {
-            _ = await Navigation.PopAsync();
-        }
-
-        Binding highestNumberBinding = new Binding();
 
         private void Guess(object sender, EventArgs e)
         {
-            string tries = RemainingTriesEntry.Text;
-            int triesInt = Int32.Parse(tries);
+            int triesInt = Int32.Parse(RemainingTriesEntry.Text);
             triesInt--;
             RemainingTriesEntry.Text = triesInt.ToString();
             HighestNumberEntry.Text = highestNumber.ToString();
             LowestNumberEntry.Text = lowestNumber.ToString();
-        }
+            guess = Int32.Parse(GuessEntry.Text);
 
-        private void EndGame()
-        {
-
+            if (guess == actualNum)
+            {
+                Navigation.PopAsync();
+                Navigation.PushAsync(new WinGame(numberOfTries - triesInt));
+            }
+            else if (guess < actualNum)
+            {
+                Feedback.TextColor = Color.Red;
+                Feedback.Text = "Too low";
+            }
+            else if (guess > actualNum)
+            {
+                Feedback.TextColor = Color.Red;
+                Feedback.Text = "Too high";
+            }
         }
     }
 }
