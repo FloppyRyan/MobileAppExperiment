@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -44,7 +40,11 @@ namespace ExperimentalApp
             RemainingTriesEntry.Text = triesInt.ToString();
             HighestNumberEntry.Text = highestNumber.ToString();
             LowestNumberEntry.Text = lowestNumber.ToString();
-            guess = Int32.Parse(GuessEntry.Text);
+
+            if (!Int32.TryParse(GuessEntry.Text, out guess))
+            {
+                return;
+            }
 
             if (guess == actualNum)
             {
