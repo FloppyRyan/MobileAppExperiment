@@ -1,9 +1,27 @@
-﻿using Xamarin.Forms;
+﻿using ExperimentalApp.Data;
+using System;
+using System.IO;
+using Xamarin.Forms;
 
 namespace ExperimentalApp
 {
     public partial class App : Application
     {
+        static Database database;
+
+        public static Database Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "experimentApp.db3"));
+                }
+
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
