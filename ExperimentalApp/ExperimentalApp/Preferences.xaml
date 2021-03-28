@@ -4,9 +4,24 @@
              x:Class="ExperimentalApp.Preferences">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Preferences Page" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Grid Margin="2,2,2,2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5" />
+                    <ColumnDefinition Width="0.5" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Highest Number" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Lowest Number" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Number of Tries" />
+            </Grid>
+            <Button Text="Save" Clicked="Save" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -16,5 +16,17 @@ namespace ExperimentalApp
         {
             InitializeComponent();
         }
+
+        private void StartGame(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+            Navigation.PushAsync(new GuessingGamePage());
+        }
+
+        private void GoToPreferences(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+            Navigation.PushAsync(new Preferences());
+        }
     }
 }

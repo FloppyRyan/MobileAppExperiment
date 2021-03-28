@@ -3,40 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExperimentalApp.GuessingGamePage">
     <ContentPage.Content>
-        <RelativeLayout>
-            <StackLayout Padding="3" BackgroundColor="Aqua">
-                <ContentView BackgroundColor="Blue">
-                    <ContentView.Content>
-                        <Grid Margin="2,2,2,2" BackgroundColor="LightGray">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*" />
-                                <ColumnDefinition Width="0.5*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="235" />
-                                <RowDefinition Height="45" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Feedback" HorizontalOptions="CenterAndExpand" />
-                            <Label Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Guessing Game" HorizontalOptions="CenterAndExpand"/>
-                            <Label Grid.Column="0" Grid.Row="2" x:Name="HighestNumberLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="2" x:Name="HighestNumberEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start"/>
-                            <Label Grid.Column="0" Grid.Row="3" x:Name="LowestNumberLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="3" x:Name="LowestNumberEntry" HorizontalTextAlignment="Start" />
-                            <Label Grid.Column="0" Grid.Row="4" x:Name="RemainingTriesLabel" HorizontalTextAlignment="End" />
-                            <Label Grid.Column="1" Grid.Row="4" x:Name="RemainingTriesEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start" />
-                            <Label Grid.Column="0" Grid.Row="5" x:Name="EnterNumberLabel" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                            <Entry Grid.Column="1" Grid.Row="5" Keyboard="Numeric" x:Name="GuessEntry"/>
-                            <Button Grid.Column="0" Grid.Row="7" Text="Guess" Clicked="Guess" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand"/>
-                        </Grid>
-                    </ContentView.Content>
-                </ContentView>
-            </StackLayout>
-        </RelativeLayout>
+        <StackLayout Padding="3" BackgroundColor="Aqua">
+            <ContentView BackgroundColor="Blue">
+                <ContentView.Content>
+                    <Grid Margin="2,2,2,2" BackgroundColor="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="235" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Feedback" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Guessing Game" HorizontalOptions="CenterAndExpand"/>
+                        <Label Grid.Column="0" Grid.Row="2" x:Name="HighestNumberLabel" HorizontalTextAlignment="End" />
+                        <Label Grid.Column="1" Grid.Row="2" x:Name="HighestNumberEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="0" Grid.Row="3" x:Name="LowestNumberLabel" HorizontalTextAlignment="End" />
+                        <Label Grid.Column="1" Grid.Row="3" x:Name="LowestNumberEntry" HorizontalTextAlignment="Start" />
+                        <Label Grid.Column="0" Grid.Row="4" x:Name="RemainingTriesLabel" HorizontalTextAlignment="End" />
+                        <Label Grid.Column="1" Grid.Row="4" x:Name="RemainingTriesEntry" x:DataType="x:Int32" HorizontalTextAlignment="Start" />
+                        <Label Grid.Column="0" Grid.Row="5" x:Name="EnterNumberLabel" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <Entry Grid.Column="1" Grid.Row="5" Keyboard="Numeric" x:Name="GuessEntry"/>
+                        <!--<ScrollView Grid.Row="6" Grid.ColumnSpan="2" Orientation="Vertical" >
+                            --><!--<StackLayout BindableLayout.ItemsSource="{x:Static  local:Binding NamedColor.All}">--><!--
+                            <StackLayout>
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal" Padding="3">
+                                            <Label Text="{Binding GuessNumber}" TextColor="{Binding GuessColor}" />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>-->
+                        <CollectionView x:Name="GuessesLog" Grid.Row="6" Grid.ColumnSpan="2" ItemsSource="{Binding GuessesLog}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Text="{Binding GuessNumber}" TextColor="{Binding GuessColor}" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <!--<ListView Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" x:Name="GuessesLog" HorizontalOptions="CenterAndExpand" />-->
+                        <Button Grid.Column="0" Grid.Row="7" Text="Guess" Clicked="Guess" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand" />
+                    </Grid>
+                </ContentView.Content>
+            </ContentView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

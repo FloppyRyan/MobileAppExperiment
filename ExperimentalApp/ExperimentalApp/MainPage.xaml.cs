@@ -5,8 +5,6 @@ namespace ExperimentalApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -17,7 +15,7 @@ namespace ExperimentalApp
         void StartGuessingGame(object sender, EventArgs e)
         {
             Navigation.PopAsync();
-            Navigation.PushAsync(new GuessingGamePage());
+            Navigation.PushAsync(new StartOrPreferencesPage());
         }
     }
 }

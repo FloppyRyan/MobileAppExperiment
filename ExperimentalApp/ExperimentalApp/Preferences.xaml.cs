@@ -16,5 +16,11 @@ namespace ExperimentalApp
         {
             InitializeComponent();
         }
+
+        private void Save(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+            Navigation.PushAsync(new StartOrPreferencesPage());
+        }
     }
 }

@@ -4,9 +4,8 @@
              x:Class="ExperimentalApp.StartOrPreferencesPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Start Game" Clicked="StartGame" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Set Preferences" Clicked="GoToPreferences" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

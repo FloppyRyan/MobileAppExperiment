@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,6 +18,33 @@ namespace ExperimentalApp
         private const string enternumberlabel = "Enter a Number";
         private int guess;
         private int actualNum;
+        ObservableCollection<ListItem> guessesLog = new ObservableCollection<ListItem>();
+        ListItem items = new ListItem();
+
+        public BindingBase FriendlyName { get; private set; }
+        //public object NamedColor { get; private set; }
+
+        private class ListItem
+        {
+            public string name { get; }
+            public string color { get; }
+
+            public ListItem()
+            {
+
+            }
+
+            public ListItem(string name, string color)
+            {
+                this.name = name;
+                this.color = color;
+            }
+
+            public override string ToString()
+            {
+                return name;
+            }
+        }
 
         public GuessingGamePage()
         {
@@ -31,6 +59,9 @@ namespace ExperimentalApp
             RemainingTriesEntry.Text = numberOfTries.ToString();
             EnterNumberLabel.Text = enternumberlabel;
             actualNum = new Random(DateTime.Now.Second).Next(lowestNumber, highestNumber);
+            GuessesLog.ItemsSource = guessesLog;
+
+            BindingContext = GuessesLog;
         }
 
         private void Guess(object sender, EventArgs e)
@@ -53,11 +84,13 @@ namespace ExperimentalApp
             }
             else if (guess < actualNum)
             {
+                guessesLog.Insert(0, new ListItem(guess.ToString(), "Red"));
                 Feedback.TextColor = Color.Red;
                 Feedback.Text = "Too low";
             }
             else if (guess > actualNum)
             {
+                guessesLog.Insert(0, new ListItem(guess.ToString(), "Green"));
                 Feedback.TextColor = Color.Red;
                 Feedback.Text = "Too high";
             }
